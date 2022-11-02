@@ -1,0 +1,28 @@
+import React, { useEffect, useState } from 'react'
+import Poke from './Poke'
+import { config } from './config';
+import axios from 'axios';
+function Liste() {
+    useState([])
+    const [listePokemonData, setListePokemonData] = useState([]);
+    useEffect(() => {
+        axios.get(config.url)
+            .then(res => {
+                console.log(res.data.results)
+                setListePokemonData(res.data.results)
+            })
+
+    }, [])
+
+    return (
+        <div>
+            {
+                listePokemonData.map((item, index) => (
+                    <Poke poke={item} key={index} />
+                ))
+            }
+        </div>
+    )
+}
+
+export default Liste

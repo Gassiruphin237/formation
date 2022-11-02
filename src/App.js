@@ -3,16 +3,16 @@ import './App.css';
 import axios from "axios";
 import { config } from './components/config';
 import ListPokemon from './components/ListPokemon';
+import Liste from './components/Liste';
 import React from 'react';
 
-class App extends React.Component {
-
-  render() {
-    return (
-      <div className="container" >
-        <ListPokemon />
-      </div >
-    )
-  }
+function App(props) {
+  return (
+    <div>
+      <Liste/>
+    {/* bonjour {props.name="ruphin"} */}
+    </div>
+  )
 }
-export default App;
+
+export default App
