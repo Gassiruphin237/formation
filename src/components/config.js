@@ -1,3 +1,3 @@
 export  const config = {
-    url:"https://pokeapi.co/api/v2/pokemon/?offset=0&limit=2"
+    url:"https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50"
 }

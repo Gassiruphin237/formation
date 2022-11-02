@@ -15,11 +15,13 @@ function Liste() {
     }, [])
 
     return (
-        <div>
+        <div className='row1'>
             {
                 listePokemonData.map((item, index) => (
+
                     <Poke poke={item} key={index} />
                 ))
+                
             }
         </div>
     )

@@ -8,9 +8,8 @@ import React from 'react';
 
 function App(props) {
   return (
-    <div>
+    <div className='container'>
       <Liste/>
-    {/* bonjour {props.name="ruphin"} */}
     </div>
   )
 }
