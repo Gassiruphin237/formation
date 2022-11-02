@@ -14,8 +14,10 @@
  color: #1c1e21;
  font-weight: bold;
 font-size: 25px;
-width: 40px !important;
- border-top-left-radius: 100px 100px;
+width: 60px !important;
+border-top-left-radius: 50%;
+border: white 10px double;
+background-clip: content-box;
  /* border-top-right-radius: 80px 80px; */
  /* border-radius: 50%; */
 }

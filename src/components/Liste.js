@@ -19,7 +19,7 @@ function Liste() {
             {
                 listePokemonData.map((item, index) => (
 
-                    <Poke poke={item} key={index} />
+                    <Poke poke={item} key={index} />? <Poke poke={item} key={index} />:"loading"
                 ))
                 
             }
