@@ -7,8 +7,8 @@ import Liste from './components/Liste';
 import React from 'react';
 import PokemonDetail from './components/PokemonDetail';
 import { Routes } from 'react-router-dom';
-import { createBrowserRouter, RouterProvider,Route} from 'react-router-dom';
-import Test  from './components/Test';
+import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
+import Test from './components/Test';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,7 +25,7 @@ function App() {
     <div className='container'>
       <RouterProvider router={router} />
       {/* <Liste/> */}
- 
+
     </div>
   )
 }

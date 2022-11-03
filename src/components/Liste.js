@@ -26,13 +26,9 @@ function Liste() {
     return (
         <div className='row1'>
 
-            {/* {!loader ? listePokemonData.map((item, index) => (
-                    <Poke poke={item} key={index} />
-                )):<ReactBootStrap.Spinner animation="border" />
-            } */
-                listePokemonData.map((item, index) => (
-                    <Poke poke={item} key={index} />
-                ))
+            {listePokemonData.map((item, index) => (
+                <Poke poke={item} key={index} />
+            ))
             }
 
         </div>

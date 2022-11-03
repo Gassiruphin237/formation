@@ -37,15 +37,14 @@ function Poke({ poke }) {
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia align="center" className='card1'>
-                {!loader ? 
+                {!loader ?
                     <>
-                    
-                    <img src={image} className="image" />
                         <p className='titre'>{id}</p>
+                        <img src={image} className="image" />
                     </>
-                    :( 
+                    : (
                         <div className='flex justify-center items-center h-full w-full' >
-                        <ReactBootStrap.Spinner animation="border" class="text-center" />
+                            <ReactBootStrap.Spinner animation="border" class="text-center" />
                         </div>
                     )
                 }
@@ -56,8 +55,8 @@ function Poke({ poke }) {
                 </Typography>
                 <Typography variant="h6" color="text.secondary">
 
-                    {!loader ?<span>{weight}</span>
-                    :(<span>Poids: please waitt....</span>)
+                    {!loader ? <span>{weight}</span>
+                        : (<span>Poids: please waitt....</span>)
                     }
                 </Typography>
             </CardContent>
