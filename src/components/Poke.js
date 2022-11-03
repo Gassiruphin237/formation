@@ -39,8 +39,9 @@ function Poke({ poke }) {
             <CardMedia align="center" className='card1'>
                 {!loader ? 
                     <>
+                    
+                    <img src={image} className="image" />
                         <p className='titre'>{id}</p>
-                        <img src={image} className="image" />
                     </>
                     :( 
                         <div className='flex justify-center items-center h-full w-full' >
@@ -54,7 +55,10 @@ function Poke({ poke }) {
                     {poke.name}
                 </Typography>
                 <Typography variant="h6" color="text.secondary">
-                    Poids: {weight}
+
+                    {!loader ?<span>{weight}</span>
+                    :(<span>Poids: please waitt....</span>)
+                    }
                 </Typography>
             </CardContent>
             <CardActions>
