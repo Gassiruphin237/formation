@@ -8,12 +8,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import * as ReactBootStrap from 'react-bootstrap'
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 function Poke({ poke }) {
     const [image, setImage] = useState("");
     const [weight, setWeight] = useState("");
     const [id, setId] = useState(null);
-    const [loader, setLoader] = useState(false)
+    const [loader, setLoader] = useState(false);
+    const [like,setLike] = useState(false);
     useEffect(() => {
 
         try {
@@ -34,6 +37,11 @@ function Poke({ poke }) {
 
 
     }, [])
+    const change = () =>{
+
+        !like? setLike(true) : setLike(false);
+
+    } 
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia align="center" className='card1'>
@@ -44,7 +52,7 @@ function Poke({ poke }) {
                     </>
                     : (
                         <div className='flex justify-center items-center h-full w-full' >
-                            <ReactBootStrap.Spinner animation="border" class="text-center" />
+                            <ReactBootStrap.Spinner animation="border"  />
                         </div>
                     )
                 }
@@ -54,13 +62,15 @@ function Poke({ poke }) {
                     {poke.name}
                 </Typography>
                 <Typography variant="h6" color="text.secondary">
-
                     {!loader ? <span>{weight}</span>
                         : (<span>Poids: please waitt....</span>)
                     }
                 </Typography>
             </CardContent>
             <CardActions>
+            {
+                like?<FavoriteIcon onClick={change} color='secondary'/>:<FavoriteBorderIcon onClick={change} color='secondary'/>
+            }
                 {/* <Button color='secondary' variant="contained">Voir plus</Button> */}
             </CardActions>
         </Card>
