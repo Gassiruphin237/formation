@@ -5,13 +5,36 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PokemonDetail from './components/PokemonDetail';
+import Error from './error/error';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import { store } from './store/store';
+import { Provider } from 'react-redux'
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    // errorElement:<Error />
 
+  },
+  {
+    path: "/Detail/:PokeId",
+    element: <PokemonDetail />,
+    // errorElement:<Error />
+  }
+])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+    <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 

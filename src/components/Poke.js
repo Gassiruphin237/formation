@@ -10,8 +10,15 @@ import Typography from '@mui/material/Typography';
 import * as ReactBootStrap from 'react-bootstrap'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useDispatch } from "react-redux";
+import { tooglePokemonFavoris } from '../reducer/pokemonReducer';
+
+
+
 
 function Poke({ poke }) {
+    const dispatch = useDispatch()
+    dispatch(tooglePokemonFavoris(poke.poke))
     const [image, setImage] = useState("");
     const [weight, setWeight] = useState("");
     const [id, setId] = useState(null);
@@ -37,11 +44,14 @@ function Poke({ poke }) {
 
 
     }, [])
-    const change = () =>{
+    // const change = () =>{
 
-        !like? setLike(true) : setLike(false);
+    //     !like? setLike(true) : setLike(false);
 
-    } 
+    // } 
+    function handleFavoris(){
+        dispatch(tooglePokemonFavoris(poke.poke))
+    }
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia align="center" className='card1'>
@@ -69,7 +79,7 @@ function Poke({ poke }) {
             </CardContent>
             <CardActions>
             {
-                like?<FavoriteIcon onClick={change} color='secondary'/>:<FavoriteBorderIcon onClick={change} color='secondary'/>
+                like?<FavoriteIcon onClick={handleFavoris} color='secondary'/>:<FavoriteBorderIcon onClick={handleFavoris} color='secondary'/>
             }
                 {/* <Button color='secondary' variant="contained">Voir plus</Button> */}
             </CardActions>

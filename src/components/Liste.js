@@ -3,7 +3,6 @@ import Poke from './Poke'
 import { config } from './config';
 import axios from 'axios';
 function Liste() {
-
     const [loader, setLoader] = useState(false)
     const [listePokemonData, setListePokemonData] = useState([]);
 
