@@ -5,16 +5,13 @@
   background-color: #e2e3e5 !important;
   height: 200px !important;
 }
-.center{
-
-}
 /* .loader{
   margin-top: 70px !important;
   justify-content: center!important;
   align-items: center !important;
 } */
 .image{
-  height: 200px;
+  height: 400px;
 }
 .titre{
  float: right !important;
